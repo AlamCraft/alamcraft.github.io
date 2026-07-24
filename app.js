@@ -258,5 +258,5 @@ progress.style.width=percent+"%";
 
 window.addEventListener("load",()=>{
 updateContent();
-setInterval(updateServerStatus,30000);
+setInterval(updateServerStatus,1000);
 });
