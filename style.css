@@ -78,7 +78,8 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mod-item{height:48px;min-height:48px;max-height:48px;overflow:hidden;}
 .card::-webkit-scrollbar{width:6px}
 .card::-webkit-scrollbar-thumb{background:rgba(212,175,55,.5);border-radius:999px}
-.mc-server{display:flex;direction:ltr!important;align-items:flex-start;gap:8px;width:360px;padding:6px;background-image:url("images/dirt.png")!important;background-repeat:repeat!important;background-size:48px 48px!important;background-color:#4a3b32;border-top:2px solid #6b6b6b;border-left:2px solid #6b6b6b;border-right:2px solid #2a2a2a;border-bottom:2px solid #2a2a2a;box-shadow:inset 1px 1px #8b8b8b,inset -1px -1px #000;font-family:Minecraftia,monospace;image-rendering:pixelated;}
+.mc-server{display:flex;direction:ltr!important;align-items:flex-start;gap:8px;width:360px;padding:6px;position:relative;overflow:hidden;background:url("images/dirt.png") repeat;background-size:48px 48px;background-color:#4a3b32;border-top:2px solid #6b6b6b;border-left:2px solid #6b6b6b;border-right:2px solid #2a2a2a;border-bottom:2px solid #2a2a2a;box-shadow:inset 1px 1px #8b8b8b,inset -1px -1px #000;font-family:Minecraftia,monospace;image-rendering:pixelated;}
+.mc-server::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.08) 0%,rgba(0,0,0,.45) 100%);pointer-events:none;}
 .mc-server:hover{background:#252525;border-color:#9f9f9f;}
 .mc-icon{width:64px;height:64px;border:1px solid #000;flex-shrink:0;}
 .mc-icon img{width:64px;height:64px;display:block;image-rendering:pixelated;}
