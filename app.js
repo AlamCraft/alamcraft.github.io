@@ -157,7 +157,13 @@ const start=performance.now();
 const res = await fetch("https://api.mcstatus.io/v2/status/java/amc.falix.gg:20033");
 const data = await res.json();
 const mcIcon = $("#mc-icon");
+const mcIcon = document.getElementById("mc-icon");
 
+if (data.icon) {
+    mcIcon.src = data.icon;
+} else {
+    mcIcon.src = "images/logo.webp";
+}
 if(data.icon){
     mcIcon.src = data.icon;
 }
