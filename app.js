@@ -177,14 +177,25 @@ mcStatus.textContent = motd;
 mcStatus.style.color = "#55ff55";
 if(mcPlayers)mcPlayers.textContent=`${online}/${max}`;
 if(mcPing)mcPing.textContent=`${ping} ms`;
+const bars=document.querySelectorAll("#mc-bars span");
+mcStatus.innerHTML=motd.replace(/\n/g,"<br>");
+let level=5;
 
+if(ping>300) level=1;
+else if(ping>200) level=2;
+else if(ping>120) level=3;
+else if(ping>60) level=4;
+
+bars.forEach((bar,i)=>{
+bar.style.opacity=i<level?1:.25;
+});
 if(mcOnlinePlayers){
 mcOnlinePlayers.innerHTML="";
-const players=data.players?.list||[];
+const players=data.players?.sample||data.players?.list||[];
 players.slice(0,8).forEach(name=>{
 mcOnlinePlayers.innerHTML+=`
 <div class="mc-player">
-<img src="https://mc-heads.net/avatar/${encodeURIComponent(name)}/16">
+<img src="https://minotar.net/avatar/${encodeURIComponent(name)}/16">
 <span>${name}</span>
 </div>`;
 });
