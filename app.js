@@ -156,7 +156,6 @@ try{
 const start=performance.now();
 const res = await fetch("https://api.mcstatus.io/v2/status/java/amc.falix.gg:20033");
 const data = await res.json();
-const mcIcon = $("#mc-icon");
 const mcIcon = document.getElementById("mc-icon");
 
 if (data.icon) {
@@ -170,7 +169,7 @@ if(data.icon){
 const motd = Array.isArray(data.motd?.clean)
     ? data.motd.clean.join(" ")
     : (data.motd?.clean || "Online");
-const ping = data.latency ?? "--";
+const ping = Math.round(performance.now() - start);
 const online = data.players?.online ?? 0;
 const max = data.players?.max ?? 0;
 
@@ -182,7 +181,7 @@ return;
 mcStatus.style.color = "#55ff55";
 if(mcPlayers)mcPlayers.textContent=`${online}/${max}`;
 if(mcPing)mcPing.textContent=`${ping} ms`;
-const bars=document.querySelectorAll("#mc-bars span");
+const bars = document.querySelectorAll(".mc-ping span");
 mcStatus.innerHTML=motd.replace(/\n/g,"<br>");
 let level=5;
 
@@ -196,12 +195,13 @@ bar.style.opacity=i<level?1:.25;
 });
 if(mcOnlinePlayers){
 mcOnlinePlayers.innerHTML="";
-const players=data.players?.sample||data.players?.list||[];
+const players = data.players?.list || [];
+
 players.forEach(player=>{
-mcOnlinePlayers.innerHTML+=`
+mcOnlinePlayers.innerHTML += `
 <div class="mc-player">
-<img src="https://minotar.net/avatar/${encodeURIComponent(player.name)}/16">
-<span>${player.name}</span>
+<img src="https://mc-heads.net/avatar/${encodeURIComponent(player.name_clean)}/16">
+<span>${player.name_clean}</span>
 </div>`;
 });
 }
