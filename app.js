@@ -173,7 +173,6 @@ setOfflineUI();
 return;
 }
 
-mcStatus.textContent = motd;
 mcStatus.style.color = "#55ff55";
 if(mcPlayers)mcPlayers.textContent=`${online}/${max}`;
 if(mcPing)mcPing.textContent=`${ping} ms`;
@@ -192,11 +191,11 @@ bar.style.opacity=i<level?1:.25;
 if(mcOnlinePlayers){
 mcOnlinePlayers.innerHTML="";
 const players=data.players?.sample||data.players?.list||[];
-players.slice(0,8).forEach(name=>{
+players.forEach(player=>{
 mcOnlinePlayers.innerHTML+=`
 <div class="mc-player">
-<img src="https://minotar.net/avatar/${encodeURIComponent(name)}/16">
-<span>${name}</span>
+<img src="https://minotar.net/avatar/${encodeURIComponent(player.name)}/16">
+<span>${player.name}</span>
 </div>`;
 });
 }
