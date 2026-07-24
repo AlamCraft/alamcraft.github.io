@@ -78,12 +78,13 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mod-item{height:48px;min-height:48px;max-height:48px;overflow:hidden;}
 .card::-webkit-scrollbar{width:6px}
 .card::-webkit-scrollbar-thumb{background:rgba(212,175,55,.5);border-radius:999px}
-.mc-server{background:url("images/dirt.png");background-size:16px 16px;background-repeat:repeat;border:2px solid #555;box-shadow:inset 0 0 0 2px #222,inset 0 0 0 3px #000;}
+.mc-server{display:flex;align-items:flex-start;gap:8px;width:360px;padding:6px;background:url("images/options_background.png") repeat;background-size:32px 32px;border:2px solid #000;box-shadow:inset 1px 1px #6b6b6b,inset -1px -1px #2a2a2a;font-family:Minecraftia,monospace;image-rendering:pixelated;}
 .mc-server:hover{background:#252525;border-color:#9f9f9f;}
-.mc-icon img{width:56px;height:56px;image-rendering:pixelated;border:1px solid #000;}
-.mc-info{flex:1;display:flex;flex-direction:column;gap:4px;overflow:hidden;}
+.mc-icon{width:64px;height:64px;border:1px solid #000;flex-shrink:0;}
+.mc-icon img{width:64px;height:64px;display:block;image-rendering:pixelated;}
+.mc-info{flex:1;display:flex;flex-direction:column;gap:4px;color:#fff;overflow:hidden;}
 .mc-top{display:flex;justify-content:space-between;align-items:center;}
-.mc-name{color:#ffffff;text-shadow:2px 2px #000;letter-spacing:.3px;font-size:22px;font-weight:normal;text-shadow:2px 2px #000;}
+.mc-name{font-size:18px;color:#fff;text-shadow:2px 2px #000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .mc-middle{display:flex;justify-content:space-between;align-items:center;gap:12px;}
 .mc-motd{display:flex;align-items:center;gap:6px;font-size:17px;color:#ffffff;text-shadow:2px 2px #000;}
 .mc-arrow{color:#ffaa00;}
@@ -99,7 +100,7 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mc-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:6px;border-top:1px solid #333;padding-top:6px;}
 #mc-online-players{display:flex;flex-wrap:wrap;gap:6px}
 .mc-player{display:flex;align-items:center;gap:4px;padding:2px 4px;background:transparent;border:none;color:#fff;font-size:13px;text-shadow:2px 2px #000;}
-.mc-player img{width:16px;height:16px;image-rendering:pixelated}
+.mc-player img{width:16px;height:16px;image-rendering:pixelated;}
 .mc-ping-text{font-size:13px;color:#55ff55;text-shadow:2px 2px #000;}
 .mc-players{font-size:15px;color:#ffffff;text-shadow:2px 2px #000;}
 .mc-server *{user-select:none;}
