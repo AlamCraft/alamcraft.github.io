@@ -242,7 +242,7 @@ const players = data.players?.list || [];
 players.forEach(player=>{
 mcOnlinePlayers.innerHTML += `
 <div class="mc-player">
-<img src="https://mc-heads.net/avatar/${encodeURIComponent(player.name_clean)}/16">
+<img src="${getHead(player.name_clean)}">
 <span>${player.name_clean}</span>
 </div>`;
 });
@@ -272,6 +272,33 @@ modsListContainer.innerHTML+=`<li class="mod-item">✨ <span>${mod}</span></li>`
 }
 
 renderAlamChatBtn();
+let skins = {};
+
+async function loadSkins() {
+    try {
+        const res = await fetch("plugins/AlamHeadsAPI/skins.json");
+        skins = await res.json();
+    } catch (e) {
+        skins = {};
+    }
+}
+
+function getHead(player) {
+    const data = skins[player.toLowerCase()];
+
+    if (!data) {
+        return `https://mc-heads.net/avatar/${encodeURIComponent(player)}/16`;
+    }
+
+    try {
+        const decoded = JSON.parse(atob(data.value));
+        const texture = decoded.textures.SKIN.url.split("/").pop();
+
+        return `https://mc-heads.net/head/${texture}/16`;
+    } catch {
+        return `https://mc-heads.net/avatar/${encodeURIComponent(player)}/16`;
+    }
+}
 updateServerStatus();
 }
 function toggleLanguage(){
@@ -298,7 +325,8 @@ const percent=max>0?window.scrollY/max*100:0;
 progress.style.width=percent+"%";
 });
 
-window.addEventListener("load",()=>{
-updateContent();
-setInterval(updateServerStatus,1000);
+window.addEventListener("load", async () => {
+    await loadSkins();
+    updateContent();
+    setInterval(updateServerStatus,1000);
 });
