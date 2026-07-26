@@ -252,31 +252,11 @@ mcOnlinePlayers.innerHTML += `
 setOfflineUI();
 }
 }
-
-function updateContent(){
-document.documentElement.lang=currentLang;
-document.documentElement.dir=currentLang==="ar"?"rtl":"ltr";
-
-document.querySelectorAll("[data-i18n]").forEach(el=>{
-const key=el.dataset.i18n;
-if(translations[currentLang][key]){
-el.textContent=translations[currentLang][key];
-}
-});
-
-if(modsListContainer){
-modsListContainer.innerHTML="";
-translations[currentLang].modsList.forEach(mod=>{
-modsListContainer.innerHTML+=`<li class="mod-item">✨ <span>${mod}</span></li>`;
-});
-}
-
-renderAlamChatBtn();
 let skins = {};
 
 async function loadSkins() {
     try {
-        const res = await fetch("plugins/AlamHeadsAPI/skins.json");
+        const res = await fetch("https://amc3.falix.org/skins.json");
         skins = await res.json();
     } catch (e) {
         skins = {};
@@ -299,6 +279,26 @@ function getHead(player) {
         return `https://mc-heads.net/avatar/${encodeURIComponent(player)}/16`;
     }
 }
+function updateContent(){
+document.documentElement.lang=currentLang;
+document.documentElement.dir=currentLang==="ar"?"rtl":"ltr";
+
+document.querySelectorAll("[data-i18n]").forEach(el=>{
+const key=el.dataset.i18n;
+if(translations[currentLang][key]){
+el.textContent=translations[currentLang][key];
+}
+});
+
+if(modsListContainer){
+modsListContainer.innerHTML="";
+translations[currentLang].modsList.forEach(mod=>{
+modsListContainer.innerHTML+=`<li class="mod-item">✨ <span>${mod}</span></li>`;
+});
+}
+
+renderAlamChatBtn();
+
 updateServerStatus();
 }
 function toggleLanguage(){
