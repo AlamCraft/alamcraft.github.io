@@ -264,7 +264,7 @@ async function loadSkins() {
 }
 
 function getHead(player) {
-    const data = skins[player.toLowerCase()];
+    const data = skins[player] || skins[player.toLowerCase()];
 
     if (!data) {
         return `https://mc-heads.net/avatar/${encodeURIComponent(player)}/16`;
