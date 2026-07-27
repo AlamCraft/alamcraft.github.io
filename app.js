@@ -196,7 +196,7 @@ mcOnlinePlayers.innerHTML="";
 async function updateServerStatus(){
 try{
 const start=performance.now();
-const res = await fetch("https://api.mcstatus.io/v2/status/java/amc.falix.gg:20033");
+const res = await fetch("https://api.mcstatus.io/v2/status/java/ae1.play.hosting:16555");
 const data = await res.json();
 const mcIcon = document.getElementById("mc-icon");
 
