@@ -196,7 +196,7 @@ mcOnlinePlayers.innerHTML="";
 async function updateServerStatus(){
 try{
 const start=performance.now();
-const res = await fetch("https://api.mcstatus.io/v2/status/java/ae1.play.hosting:16555");
+const res = await fetch("https://api.mcstatus.io/v2/status/java/ae1.play.hosting");
 const data = await res.json();
 const mcIcon = document.getElementById("mc-icon");
 
@@ -312,7 +312,7 @@ updateContent();
 }
 
 function copyIP(){
-navigator.clipboard.writeText("amc.falix.gg");
+navigator.clipboard.writeText("ae1.play.hosting");
 
 if(toast){
 toast.textContent=translations[currentLang].toastMsg;
