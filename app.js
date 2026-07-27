@@ -258,14 +258,18 @@ async function loadSkins() {
     try {
         const res = await fetch("https://amc3.falix.org/skins.json");
         skins = await res.json();
+
+        console.log("skins loaded:", skins);
     } catch (e) {
+        console.error("loadSkins error:", e);
         skins = {};
     }
 }
 
 function getHead(player) {
     const data = skins[player] || skins[player.toLowerCase()];
-
+    console.log("player =", player);
+console.log("data =", data);
     if (!data) {
         return `https://mc-heads.net/avatar/${encodeURIComponent(player)}/16`;
     }
