@@ -1,7 +1,7 @@
 const translations={
 ar:{
 title:"سيرفر علم كرافت ☘️",
-copyBtn:"نسخ الـ IP:PORT",
+copyBtn:"نسخ الـ IP",
 javaVersion:"☕️ جافا:",
 bedrockVersion:"🛏️ بيدروك:",
 addBedrock:"إضافة السيرفر إلى ماينكرافت البيدروك",
@@ -30,7 +30,7 @@ discord:"سيرفر الديسكورد",
 adminsTitle:"👑 المشرفين",
 adminsNames:"❄️👑 علَم جيمر ☘️، الثعلب المفقود 🦊، ملك الجليد",
 copyright:"© 2026 AlamCraft Server",
-toastMsg:"✔ تم نسخ IP:PORT السيرفر بنجاح",
+toastMsg:"✔ تم نسخ  الـ IP السيرفر بنجاح",
 feature1:"✅ يدعم الجافا و البيدروك",
 feature2:"✅ قوانين واضحة و عادلة",
 feature3:"✅ تحديثات مستمرة",
@@ -42,24 +42,43 @@ loading:"جاري التحقق... 📡",
 modsTitle:"المودات/الإضافات",
 downloadCenterBtn:"مركز التحميل",
 modsList:[
-"مود المهارات ✨",
-"مود القبور 🪦",
+"مود اصلاح السندان 🔨",
+"مود نظام المهارات ✨",
+"مود تسجيل الدخول 🔑",
+"مود المقايدة 🤝",
+"مود الخزنات الخاصة 🏦",
+"مود إدارة الدردشة 💬",
+"مود تنظيف اللاج 🧹",
+"مود حمل الموبات في الانفنتوري 👆",
+"مود ربط شات السيرفر بالديسكورد 💜",
 "مود الرؤوس 💀",
-"مود الأوامر الإضافية ⚙️",
-"مود دعم البيدروك مع الجافا 📱🖥️",
-"مود النوم بلاعب واحد 🛏😴",
+"مود الإضاءة بالأضائة 💡",
+"مود الشوب 🛒",
+"مود الأوامر الأساسية ⚙️",
+"مود النقل للسباون 🛏️",
+"مود حماية المزارع 🌾",
+"مود دعم البيدروك 📱🖥️",
+"مود حماية الأراضي 🚧",
 "مود الجلوس 🪑",
-"مود تغيير السكينات 👕",
-"مود قطع الأشجار 🌳🪓",
-"مود تكسير الموارد 🪨⛏️",
+"مود طلب التي بي ✈️",
+"مود إدارة الصلاحيات 👑",
+"مود البيع بسعر مخصص 🏛️",
+"مود تخطي الليل بلاعب واحد 😴",
+"مود منع استخدام الاكس راي ⛏️",
+"مود الانتقال لمكان عشوائي 🌍",
+"مود تجميع الموبات 🌹",
+"مود تعيين المنزل 🏠",
+"مود السكينات 👕",
+"مود ربط الشوب بالسباونرات 🐣",
+"مود تسهيل قطع الأشجار 🌳",
+"مود تكسير الموارد بسهوبة ⛏️",
 "مود دعم جميع الإصدارات 🔄",
-"مود الكلايم 🚧",
-"مود الإن بي سي 🤖"
+"مود الدردشة الصوتية 🎤"
 ]
 },
 en:{
 title:"AlamCraft Server ☘️",
-copyBtn:"Copy IP:PORT",
+copyBtn:"Copy IP",
 javaVersion:"☕️ Java:",
 bedrockVersion:"🛏️ Bedrock:",
 addBedrock:"Add Server to Minecraft Bedrock",
@@ -100,19 +119,38 @@ loading:"Checking... 📡",
 modsTitle:"Mods/Plugins",
 downloadCenterBtn:"Download Center",
 modsList:[
+"AnvilUnlocker 🔨",
 "AuraSkills ✨",
-"AxGraves 🪦",
+"AuthMe 🔑",
+"AxTrade 🤝",
+"AxVaults 🏦",
+"ChatManager 💬",
+"ClearLag 🧹",
+"ClickMobs 👆",
+"DiscordSRV 💜",
 "DropHeads 💀",
-"EssentialsX ⚙️",
-"GeyserMc 📱🖥️",
-"OnePlayerSleep 🛏😴",
-"Sit 🪑",
-"SkinsRestorer 👕",
-"TreeCapitator 🌳🪓",
-"VeinMiner 🪨⛏️",
-"ViaVersion 🔄",
+"DynamicLights 💡",
+"EconomyShopGUI 🛒",
+"Essentials ⚙️",
+"EssentialsSpawn 🛏️",
+"FarmProtection 🌾",
+"GeyserMC 📱🖥️",
 "GriefPrevention 🚧",
-"ZNPCs 🤖"
+"GSit 🪑",
+"JustTPA ✈️",
+"LuckPerms 👑",
+"NexusAuctionHouse 🏛️",
+"OnePlayerSleep 😴",
+"Orebfuscator ⛏️",
+"RandomTP 🌍",
+"RoseStacker 🌹",
+"SetHome 🏠",
+"SkinsRestorer 👕",
+"SpawnerShopBridge 🐣",
+"Timber 🌳",
+"VeinMiner ⛏️",
+"ViaVersion 🔄",
+"Simple Voice Chat 🎤"
 ]
 }
 };
@@ -133,8 +171,8 @@ const mcPing=$("#mc-ping");
 const mcOnlinePlayers=$("#mc-online-players");
 
 function toggleMenu(){
-sideMenu.classList.toggle("active");
-menuOverlay.classList.toggle("active");
+sideMenu?.classList.toggle("active");
+menuOverlay?.classList.toggle("active");
 }
 
 function renderAlamChatBtn(){
@@ -148,41 +186,64 @@ a.innerHTML=`<img src="images/achat.png" class="link-icon"><span>${currentLang==
 socialLinks.prepend(a);
 }
 function setOfflineUI(){
-if(mcStatus)mcStatus.textContent="OFFLINE";
-if(mcPlayers)mcPlayers.textContent="0/0";
-if(mcPing)mcPing.textContent="-- ms";
-if(mcOnlinePlayers)mcOnlinePlayers.innerHTML="";
+mcStatus.textContent="OFFLINE";
+mcStatus.style.color="#ff5555";
+mcPlayers.textContent="0/0";
+mcPing.textContent="-- ms";
+mcOnlinePlayers.innerHTML="";
 }
 
 async function updateServerStatus(){
 try{
 const start=performance.now();
-const res=await fetch(`https://api.mcsrvstat.us/2/amc.falix.gg:28001?t=${Date.now()}`);
-if(!res.ok)throw new Error();
-const data=await res.json();
+const res = await fetch("https://api.mcstatus.io/v2/status/java/ae1.play.hosting");
+const data = await res.json();
+const mcIcon = document.getElementById("mc-icon");
 
-const ping=Math.round(performance.now()-start);
-const online=data.players?.online||0;
-const max=data.players?.max||0;
+if (data.icon) {
+    mcIcon.src = data.icon;
+} else {
+    mcIcon.src = "images/logo.webp";
+}
+if(data.icon){
+    mcIcon.src = data.icon;
+}
+const motd = Array.isArray(data.motd?.clean)
+    ? data.motd.clean.join(" ")
+    : (data.motd?.clean || "Online");
+const ping = Math.round(performance.now() - start);
+const online = data.players?.online ?? 0;
+const max = data.players?.max ?? 0;
 
 if(!data.online){
 setOfflineUI();
 return;
 }
 
-if(mcStatus)mcStatus.textContent=`ONLINE`;
+mcStatus.style.color = "#55ff55";
 if(mcPlayers)mcPlayers.textContent=`${online}/${max}`;
 if(mcPing)mcPing.textContent=`${ping} ms`;
+const bars = document.querySelectorAll(".mc-ping span");
+mcStatus.innerHTML=motd.replace(/\n/g,"<br>");
+let level=5;
 
+if(ping>300) level=1;
+else if(ping>200) level=2;
+else if(ping>120) level=3;
+else if(ping>60) level=4;
+
+bars.forEach((bar,i)=>{
+bar.style.opacity=i<level?1:.25;
+});
 if(mcOnlinePlayers){
 mcOnlinePlayers.innerHTML="";
-const players=data.players?.list||[];
+const players = data.players?.list || [];
 
-players.slice(0,8).forEach(name=>{
-mcOnlinePlayers.innerHTML+=`
+players.forEach(player=>{
+mcOnlinePlayers.innerHTML += `
 <div class="mc-player">
-<img src="https://mc-heads.net/avatar/${encodeURIComponent(name)}/16">
-<span>${name}</span>
+<img src="${getHead(player.name_clean)}">
+<span>${player.name_clean}</span>
 </div>`;
 });
 }
@@ -191,7 +252,37 @@ mcOnlinePlayers.innerHTML+=`
 setOfflineUI();
 }
 }
+let skins = {};
 
+async function loadSkins() {
+    try {
+        const res = await fetch("https://amc3.falix.org/skins.json");
+        skins = await res.json();
+
+        console.log("skins loaded:", skins);
+    } catch (e) {
+        console.error("loadSkins error:", e);
+        skins = {};
+    }
+}
+
+function getHead(player) {
+    const data = skins[player] || skins[player.toLowerCase()];
+    console.log("player =", player);
+console.log("data =", data);
+    if (!data) {
+        return `https://mc-heads.net/avatar/${encodeURIComponent(player)}/16`;
+    }
+
+    try {
+        const decoded = JSON.parse(atob(data.value));
+        const texture = decoded.textures.SKIN.url.split("/").pop();
+
+        return `https://mc-heads.net/head/${texture}/16`;
+    } catch {
+        return `https://mc-heads.net/avatar/${encodeURIComponent(player)}/16`;
+    }
+}
 function updateContent(){
 document.documentElement.lang=currentLang;
 document.documentElement.dir=currentLang==="ar"?"rtl":"ltr";
@@ -211,6 +302,7 @@ modsListContainer.innerHTML+=`<li class="mod-item">✨ <span>${mod}</span></li>`
 }
 
 renderAlamChatBtn();
+
 updateServerStatus();
 }
 function toggleLanguage(){
@@ -220,7 +312,7 @@ updateContent();
 }
 
 function copyIP(){
-navigator.clipboard.writeText("amc.falix.gg:28001");
+navigator.clipboard.writeText("ae1.play.hosting");
 
 if(toast){
 toast.textContent=translations[currentLang].toastMsg;
@@ -237,7 +329,8 @@ const percent=max>0?window.scrollY/max*100:0;
 progress.style.width=percent+"%";
 });
 
-window.addEventListener("load",()=>{
-updateContent();
-setInterval(updateServerStatus,30000);
+window.addEventListener("load", async () => {
+    await loadSkins();
+    updateContent();
+    setInterval(updateServerStatus,1000);
 });
