@@ -350,7 +350,7 @@ document.getElementById("startServer").onclick = async () => {
   }
 
   if (data.error?.code === "ad_required") {
-    status.textContent = "🔔 افتح الإعلان...";
+    status.textContent = "😁 لانستفيد من اي اعلان ظهر لك";
     window.open(data.error.action_url, "_blank");
     return;
   }
