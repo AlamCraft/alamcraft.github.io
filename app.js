@@ -334,3 +334,26 @@ window.addEventListener("load", async () => {
     updateContent();
     setInterval(updateServerStatus, 1000);
 });
+
+document.getElementById("startServer").onclick=async()=>{
+const status=document.getElementById("status");
+status.textContent="⏳ جاري إرسال طلب التشغيل...";
+try{
+const r=await fetch("https://hidden-wind-cca1.eldinalam91.workers.dev/",{
+method:"POST"
+});
+const data=await r.json().catch(()=>null);
+
+if(r.ok){
+status.textContent="✅ تم إرسال طلب تشغيل السيرفر.";
+}else if(r.status===403){
+status.innerHTML="⚠️ يلزم مشاهدة إعلان لأن السيرفر على Falix المجانية، ثم أعد الضغط على زر التشغيل.";
+}else{
+status.textContent="❌ حدث خطأ أثناء التشغيل.";
+console.log(data);
+}
+}catch(e){
+status.textContent="❌ تعذر الاتصال بالخدمة.";
+console.error(e);
+}
+};
