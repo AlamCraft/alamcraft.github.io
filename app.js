@@ -208,9 +208,9 @@ async function updateServerStatus() {
         if (data.icon) {
             mcIcon.src = data.icon;
         }
-        const motd = Array.isArray(data.motd?.clean)
-            ? data.motd.clean.join(" ")
-            : (data.motd?.clean || "Online");
+        const motd = Array.isArray(data.motd?.html)
+        ? data.motd.html.join("<br>")
+        : (data.motd?.html || "Online");
         const ping = Math.round(performance.now() - start);
         const online = data.players?.online ?? 0;
         const max = data.players?.max ?? 0;
@@ -224,7 +224,7 @@ async function updateServerStatus() {
         if (mcPlayers) mcPlayers.textContent = `${online}/${max}`;
         if (mcPing) mcPing.textContent = `${ping} ms`;
         const bars = document.querySelectorAll(".mc-ping span");
-        mcStatus.innerHTML = motd.replace(/\n/g, "<br>");
+        mcStatus.innerHTML = motd;
         let level = 5;
 
         if (ping > 300) level = 1;
