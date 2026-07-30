@@ -196,7 +196,7 @@ function setOfflineUI() {
 async function updateServerStatus() {
     try {
         const start = performance.now();
-        const res = await fetch("https://api.mcstatus.io/v2/status/java/ae1.play.hosting");
+        const res = await fetch("https://api.mcstatus.io/v2/status/java/amc.falix.gg");
         const data = await res.json();
         const mcIcon = document.getElementById("mc-icon");
 
@@ -256,7 +256,7 @@ let skins = {};
 
 async function loadSkins() {
     try {
-        const res = await fetch("https://amc3.falix.org/skins.json");
+        const res = await fetch("https://amc1.falix.org/skins.json");
         skins = await res.json();
 
         console.log("skins loaded:", skins);
@@ -312,7 +312,7 @@ function toggleLanguage() {
 }
 
 function copyIP() {
-    navigator.clipboard.writeText("ae1.play.hosting");
+    navigator.clipboard.writeText("amc.falix.gg");
 
     if (toast) {
         toast.textContent = translations[currentLang].toastMsg;
