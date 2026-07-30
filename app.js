@@ -1,6 +1,6 @@
 const translations = {
     ar: {
-        title: "سيرفر علم كرافت ☘️",
+        title: "سيرفر علم كرافت",
         copyBtn: "نسخ الـ IP",
         javaVersion: "☕️ جافا:",
         bedrockVersion: "🛏️ بيدروك:",
@@ -77,7 +77,7 @@ const translations = {
         ]
     },
     en: {
-        title: "AlamCraft Server ☘️",
+        title: "AlamCraft Server",
         copyBtn: "Copy IP",
         javaVersion: "☕️ Java:",
         bedrockVersion: "🛏️ Bedrock:",
