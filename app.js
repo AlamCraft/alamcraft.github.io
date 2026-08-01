@@ -256,7 +256,7 @@ let skins = {};
 
 async function loadSkins() {
     try {
-        const res = await fetch("https://amc1.falix.org/skins.json");
+        const res = await fetch(`https://amc1.falix.org/skins.json?t=${Date.now()}`);
         skins = await res.json();
 
         console.log("skins loaded:", skins);
@@ -350,7 +350,7 @@ document.getElementById("startServer").onclick = async () => {
   }
 
   if (data.error?.code === "ad_required") {
-    status.textContent = "😁 لانستفيد من اي اعلان ظهر لك";
+    status.textContent = "😁 لا نستفيد من اي اعلان ظهر لك";
     window.open(data.error.action_url, "_blank");
     return;
   }
