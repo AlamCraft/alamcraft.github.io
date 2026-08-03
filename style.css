@@ -8,7 +8,7 @@ html[lang='en'] .hero h1{font-size:48px;}
 html[lang='ar'] .hero h1{font-size:56px;}
 html[lang='en'] body{font-size:.88rem;}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--text);font-family:'Arapix',sans-serif;margin:0;padding:20px;min-height:100vh;overflow-x:hidden}
+body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--text);font-family:var(--main-font);margin:0;padding:20px;min-height:100vh;overflow-x:hidden}
 :lang(en){font-family:'Mojangles',sans-serif!important}
 :lang(ar){font-family:'Arapix',sans-serif!important}
 .container{width:100%;max-width:900px;margin:auto;min-height:100vh}
@@ -18,8 +18,8 @@ body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--t
 .hero h1,.section-title{color:var(--gold)}
 .hero h1,.section-title,.card h2,.staff-card h2{display:flex;justify-content:center;align-items:center;text-align:center;width:100%}
 .hero h1{min-height:auto;height:auto;line-height:1.2;font-size:clamp(1.8rem,6vw,3.5rem);display:flex;align-items:center;justify-content:center;text-align:center}
-.ip-text{direction:ltr;color:#55ff55;font-weight:bold;word-break:break-word;text-align:center}
-.btn-copy,.btn-bedrock,.minecraft-btn{width:100%;padding:14px;border:none;border-radius:18px;background:linear-gradient(180deg,#7CFC00,#4CAF50);color:#102236;font-family:var(--main-font);font-weight:bold;display:flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none}
+.ip-text{direction:ltr;color:#55ff55;font-weight:bold;word-break:break-word;text-align:center;font-family:'Mojangles',sans-serif}
+.btn-copy,.btn-bedrock,.minecraft-btn{width:100%;padding:14px;border:none;border-radius:18px;background:linear-gradient(180deg,#7CFC00,#4CAF50);color:#102236;font-family:'Mojangles',sans-serif;font-weight:bold;display:flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none}
 .content-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;direction:ltr;}
 .social-links{display:flex;flex-direction:column;gap:12px;width:100%}
 .social-item{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 18px;background:var(--accent);border-radius:12px;color:var(--text);text-align:center;min-height:52px;text-decoration:none}
@@ -44,7 +44,7 @@ body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--t
 .social-card{height:470px;min-height:470px;max-height:470px;overflow:auto}
 .staff-card{height:120px;min-height:120px;max-height:120px;overflow:auto}
 .version-badges{display:flex;flex-direction:column;gap:0;width:100%;min-height:auto}
-.badge{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;height:72px;min-height:72px;max-height:72px;padding:16px;font-size:1.15rem;width:100%;overflow:hidden}
+.badge{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;height:72px;min-height:72px;max-height:72px;padding:16px;font-size:1.15rem;width:100%;overflow:hidden;font-family:'Mojangles',sans-serif}
 .ver{display:block;width:100%;font-size:1.35rem;font-weight:bold;word-break:break-word}
 .label{font-size:1rem}
 .footer{margin-top:30px;border-radius:18px;overflow:hidden}
@@ -80,7 +80,7 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mod-item{height:48px;min-height:48px;max-height:48px;overflow:hidden;}
 .card::-webkit-scrollbar{width:6px}
 .card::-webkit-scrollbar-thumb{background:rgba(212,175,55,.5);border-radius:999px}
-.mc-server{display:flex;direction:ltr!important;align-items:flex-start;gap:8px;width:360px;padding:6px;position:relative;overflow:hidden;background:url("images/dirt.png") repeat;background-size:48px 48px;background-color:#4a3b32;border-top:2px solid #6b6b6b;border-left:2px solid #6b6b6b;border-right:2px solid #2a2a2a;border-bottom:2px solid #2a2a2a;box-shadow:inset 1px 1px #8b8b8b,inset -1px -1px #000;font-family:Minecraftia,monospace;image-rendering:pixelated;font-family:'Mojangles',sans-serif;}
+.mc-server{display:flex;direction:ltr!important;align-items:flex-start;gap:8px;width:360px;padding:6px;position:relative;overflow:hidden;background:url("images/dirt.png") repeat;background-size:48px 48px;background-color:#4a3b32;border-top:2px solid #6b6b6b;border-left:2px solid #6b6b6b;border-right:2px solid #2a2a2a;border-bottom:2px solid #2a2a2a;box-shadow:inset 1px 1px #8b8b8b,inset -1px -1px #000;image-rendering:pixelated;font-family:'Mojangles',sans-serif;}
 .mc-server::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35);pointer-events:none;z-index:0;}
 .mc-server:hover{border-top:2px solid #9f9f9f;border-left:2px solid #9f9f9f;border-right:2px solid #4a4a4a;border-bottom:2px solid #4a4a4a;}
 .mc-icon{width:64px;height:64px;border:1px solid #000;flex-shrink:0;position:relative;z-index:1;}
@@ -107,9 +107,8 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mc-ping-text{font-size:13px;color:#55ff55;text-shadow:2px 2px #000;}
 .mc-players{font-size:15px;color:#ffffff;text-shadow:2px 2px #000;}
 .mc-player{background:#2a2a2a;padding:2px 6px;border-radius:2px;border:1px solid #444;}
-#startServer{width:100%;padding:14px;border:none;border-radius:18px;background:linear-gradient(180deg,#7CFC00,#4CAF50);color:#102236;font-family:var(--main-font);font-weight:bold;display:flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none;height:52px;min-height:52px;margin-top:4px;transition:.15s}
+#startServer{width:100%;padding:14px;border:none;border-radius:18px;background:linear-gradient(180deg,#7CFC00,#4CAF50);color:#102236;font-family:'Mojangles',sans-serif;font-weight:bold;display:flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none;height:52px;min-height:52px;margin-top:4px;transition:.15s}
 #startServer:hover{filter:brightness(1.08)}
 #startServer:active{transform:translateY(2px);filter:brightness(.92)}
 #startServer:disabled{opacity:.65;cursor:not-allowed}
-#status{margin-top:10px;min-height:24px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text);font-family:var(--main-font)}
-.mc-server,.mc-server *,.ip-text,.badge,#startServer,.btn-copy,.btn-bedrock,.minecraft-btn,.mc-name,.mc-status,.mc-players,.mc-player,.mc-ping-text{font-family:'Mojangles',sans-serif!important}
+#status{margin-top:10px;min-height:24px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text);font-family:'Mojangles',sans-serif}
