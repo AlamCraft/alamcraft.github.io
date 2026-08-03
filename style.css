@@ -1,6 +1,6 @@
 @font-face{font-family:'Mojangles';src:url('fonts/Mojangles.ttf') format('truetype')}
 @font-face{font-family:'Arapix';src:url('fonts/MojanglesArab.ttf') format('truetype')}
-:root{--bg:#041321;--card:rgba(17,32,53,.92);--text:#ffffff;--text-muted:#c8d29b;--primary:#4caf50;--accent:#1b5e20;--gold:#55ff55;--main-font:'Arapix',sans-serif}
+:root{--bg:#041321;--card:rgba(17,32,53,.92);--text:#ffffff;--text-muted:#c8d29b;--primary:#4caf50;--accent:#1b5e20;--gold:#55ff55;--main-font:'Mojangles',sans-serif}
 html{scroll-behavior:smooth;font-size:16px;text-size-adjust:100%;-webkit-text-size-adjust:100%;overflow-x:hidden}
 html[lang='en']{--main-font:'Mojangles',sans-serif}
 html[lang='ar']{--main-font:'Arapix',sans-serif;font-size:16px}
@@ -8,7 +8,9 @@ html[lang='en'] .hero h1{font-size:48px;}
 html[lang='ar'] .hero h1{font-size:56px;}
 html[lang='en'] body{font-size:.88rem;}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--text);font-family:var(--main-font);margin:0;padding:20px;min-height:100vh;overflow-x:hidden}
+body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--text);font-family:'Arapix',sans-serif;margin:0;padding:20px;min-height:100vh;overflow-x:hidden}
+:lang(en){font-family:'Mojangles',sans-serif!important}
+:lang(ar){font-family:'Arapix',sans-serif!important}
 .container{width:100%;max-width:900px;margin:auto;min-height:100vh}
 .card{background:linear-gradient(180deg,rgba(22,37,59,.95),rgba(10,20,36,.95));border:2px solid rgba(212,175,55,.25);border-radius:22px;padding:24px;margin-bottom:20px;overflow:hidden}
 .logo{width:200px;border-radius:24px}
@@ -78,7 +80,7 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mod-item{height:48px;min-height:48px;max-height:48px;overflow:hidden;}
 .card::-webkit-scrollbar{width:6px}
 .card::-webkit-scrollbar-thumb{background:rgba(212,175,55,.5);border-radius:999px}
-.mc-server{display:flex;direction:ltr!important;align-items:flex-start;gap:8px;width:360px;padding:6px;position:relative;overflow:hidden;background:url("images/dirt.png") repeat;background-size:48px 48px;background-color:#4a3b32;border-top:2px solid #6b6b6b;border-left:2px solid #6b6b6b;border-right:2px solid #2a2a2a;border-bottom:2px solid #2a2a2a;box-shadow:inset 1px 1px #8b8b8b,inset -1px -1px #000;font-family:Minecraftia,monospace;image-rendering:pixelated;}
+.mc-server{display:flex;direction:ltr!important;align-items:flex-start;gap:8px;width:360px;padding:6px;position:relative;overflow:hidden;background:url("images/dirt.png") repeat;background-size:48px 48px;background-color:#4a3b32;border-top:2px solid #6b6b6b;border-left:2px solid #6b6b6b;border-right:2px solid #2a2a2a;border-bottom:2px solid #2a2a2a;box-shadow:inset 1px 1px #8b8b8b,inset -1px -1px #000;font-family:Minecraftia,monospace;image-rendering:pixelated;font-family:'Mojangles',sans-serif;}
 .mc-server::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35);pointer-events:none;z-index:0;}
 .mc-server:hover{border-top:2px solid #9f9f9f;border-left:2px solid #9f9f9f;border-right:2px solid #4a4a4a;border-bottom:2px solid #4a4a4a;}
 .mc-icon{width:64px;height:64px;border:1px solid #000;flex-shrink:0;position:relative;z-index:1;}
@@ -110,3 +112,4 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 #startServer:active{transform:translateY(2px);filter:brightness(.92)}
 #startServer:disabled{opacity:.65;cursor:not-allowed}
 #status{margin-top:10px;min-height:24px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text);font-family:var(--main-font)}
+.mc-server,.mc-server *,.ip-text,.badge,#startServer,.btn-copy,.btn-bedrock,.minecraft-btn,.mc-name,.mc-status,.mc-players,.mc-player,.mc-ping-text{font-family:'Mojangles',sans-serif!important}
