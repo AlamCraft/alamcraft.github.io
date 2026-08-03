@@ -18,7 +18,7 @@ body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--t
 .hero h1,.section-title{color:var(--gold)}
 .hero h1,.section-title,.card h2,.staff-card h2{display:flex;justify-content:center;align-items:center;text-align:center;width:100%}
 .hero h1{min-height:auto;height:auto;line-height:1.2;font-size:clamp(1.8rem,6vw,3.5rem);display:flex;align-items:center;justify-content:center;text-align:center}
-.ip-text{direction:ltr;color:#55ff55;font-weight:bold;word-break:break-word;text-align:center;font-family:'Mojangles',sans-serif}
+.ip-text{display:block;width:100%;direction:ltr;text-align:center;color:#55ff55;font-weight:bold;word-break:break-word;font-family:'Mojangles',sans-serif}
 .btn-copy,.btn-bedrock,.minecraft-btn{width:100%;padding:14px;border:none;border-radius:18px;background:linear-gradient(180deg,#7CFC00,#4CAF50);color:#102236;font-family:'Mojangles',sans-serif;font-weight:bold;display:flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none}
 .content-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;direction:ltr;}
 .social-links{display:flex;flex-direction:column;gap:12px;width:100%}
@@ -41,6 +41,7 @@ body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--t
 #toast.show{top:20px;opacity:1}
 .status-card{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 .connection{min-height:auto;height:auto;max-height:none;overflow:visible}
+.ip-wrapper{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;gap:12px;text-align:center}
 .social-card{height:470px;min-height:470px;max-height:470px;overflow:auto}
 .staff-card{height:120px;min-height:120px;max-height:120px;overflow:auto}
 .version-badges{display:flex;flex-direction:column;gap:0;width:100%;min-height:auto}
