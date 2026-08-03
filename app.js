@@ -185,9 +185,7 @@ async function updateServerStatus() {
         const mcIcon = document.getElementById("mc-icon");
 
         mcIcon.src=data.icon||"images/logo.webp";
-        const motd=Array.isArray(data.motd?.html)
-        ?data.motd.html.join("<br>")
-        :(data.motd?.html||"");
+        const motd=Array.isArray(data.motd?.html)?data.motd.html.join("<br>"):data.motd?.html||"";
         const ping = Math.round(performance.now() - start);
         const online = data.players?.online ?? 0;
         const max = data.players?.max ?? 0;
@@ -198,8 +196,8 @@ async function updateServerStatus() {
         }
         if (mcPlayers) mcPlayers.textContent = `${data.players.online}/${data.players.max}`;
         if (mcPing) mcPing.textContent = `${ping} ms`;
-        document.getElementById("mc-version").textContent =
-        data.version?.name_clean || data.version?.name || "Offline";
+        document.getElementById("mc-version").textContent=
+        data.online?(data.version?.name_clean||data.version?.name||""):"";
         const bars = document.querySelectorAll(".mc-ping span");
         mcStatus.innerHTML=motd;
        let level=5;
