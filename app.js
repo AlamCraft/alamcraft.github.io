@@ -35,10 +35,6 @@ const translations = {
         feature2: "✅ قوانين واضحة و عادلة",
         feature3: "✅ تحديثات مستمرة",
         feature4: "✅ إدارة نشطة",
-        serverOnline: "السيرفر متصل",
-        serverOffline: "السيرفر مغلق",
-        playersOnline: "اللاعبون:",
-        loading: "جاري التحقق... 📡",
         modsTitle: "المودات/الإضافات",
         downloadCenterBtn: "مركز التحميل",
         modsList: [
@@ -112,10 +108,6 @@ const translations = {
         feature2: "✅ Fair Rules",
         feature3: "✅ Constant Updates",
         feature4: "✅ Active Staff",
-        serverOnline: "Server Online",
-        serverOffline: "Server Offline",
-        playersOnline: "Players:",
-        loading: "Checking... 📡",
         modsTitle: "Mods/Plugins",
         downloadCenterBtn: "Download Center",
         modsList: [
@@ -185,14 +177,6 @@ function renderAlamChatBtn() {
     a.innerHTML = `<img src="images/achat.png" class="link-icon"><span>${currentLang === "ar" ? "منصة علم شات" : "Alam Chat Platform"}</span>`;
     socialLinks.prepend(a);
 }
-function setOfflineUI() {
-    mcStatus.textContent = "OFFLINE";
-    mcStatus.style.color = "#ff5555";
-    mcPlayers.textContent = "0/0";
-    mcPing.textContent = "-- ms";
-    mcOnlinePlayers.innerHTML = "";
-}
-
 async function updateServerStatus() {
     try {
         const start = performance.now();
@@ -201,7 +185,7 @@ async function updateServerStatus() {
         const mcIcon = document.getElementById("mc-icon");
 
         mcIcon.src=data.icon||"images/logo.webp";
-       const motd=Array.isArray(data.motd?.html)?data.motd.html.join("<br>"):(data.motd?.html||"Online");
+       const motd=data.motd?.html?.join("<br>")||data.motd?.html||"";
         const ping = Math.round(performance.now() - start);
         const online = data.players?.online ?? 0;
         const max = data.players?.max ?? 0;
