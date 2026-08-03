@@ -200,17 +200,8 @@ async function updateServerStatus() {
         const data = await res.json();
         const mcIcon = document.getElementById("mc-icon");
 
-        if (data.icon) {
-            mcIcon.src = data.icon;
-        } else {
-            mcIcon.src = "images/logo.webp";
-        }
-        if (data.icon) {
-            mcIcon.src = data.icon;
-        }
-        const motd = Array.isArray(data.motd?.html)
-        ? data.motd.html.join("<br>")
-        : (data.motd?.html || "Online");
+        mcIcon.src=data.icon||"images/logo.webp";
+       const motd=Array.isArray(data.motd?.clean)?data.motd.clean.join(" "):(data.motd?.clean||"Online");
         const ping = Math.round(performance.now() - start);
         const online = data.players?.online ?? 0;
         const max = data.players?.max ?? 0;
@@ -224,7 +215,7 @@ async function updateServerStatus() {
         if (mcPlayers) mcPlayers.textContent = `${online}/${max}`;
         if (mcPing) mcPing.textContent = `${ping} ms`;
         const bars = document.querySelectorAll(".mc-ping span");
-        mcStatus.innerHTML = motd;
+        mcStatus.textContent=motd;
         let level = 5;
 
         if (ping > 300) level = 1;
@@ -240,11 +231,11 @@ async function updateServerStatus() {
             const players = data.players?.list || [];
 
             players.forEach(player => {
-                mcOnlinePlayers.innerHTML += `
+               mcOnlinePlayers.insertAdjacentHTML("beforeend",`
 <div class="mc-player">
 <img src="${getHead(player.name_clean)}">
 <span>${player.name_clean}</span>
-</div>`;
+</div>`);
             });
         }
 
@@ -259,7 +250,7 @@ async function loadSkins() {
         const res = await fetch(`https://amc1.falix.org/skins.json?t=${Date.now()}`);
         skins = await res.json();
 
-        console.log("skins loaded:", skins);
+        
     } catch (e) {
         console.error("loadSkins error:", e);
         skins = {};
@@ -268,8 +259,6 @@ async function loadSkins() {
 
 function getHead(player) {
     const data = skins[player] || skins[player.toLowerCase()];
-    console.log("player =", player);
-    console.log("data =", data);
     if (!data) {
         return `https://mc-heads.net/avatar/${encodeURIComponent(player)}/16`;
     }
@@ -338,22 +327,33 @@ window.addEventListener("load", async () => {
 document.getElementById("startServer").onclick = async () => {
   const status = document.getElementById("status");
 
-  const r = await fetch("https://hidden-wind-cca1.eldinalam91.workers.dev/", {
-    method: "POST"
-  });
+  let data={};
 
-  const data = await r.json();
+try{
+const r=await fetch("https://hidden-wind-cca1.eldinalam91.workers.dev/",{method:"POST"});
+data=await r.json();
 
-  if (r.ok) {
-    status.textContent = "✅ تم إرسال طلب تشغيل السيرفر";
-    return;
-  }
+document.getElementById("startServer").onclick=async()=>{
+const status=document.getElementById("status");
 
-  if (data.error?.code === "ad_required") {
-    status.textContent = "😁 لا نستفيد من اي اعلان ظهر لك";
-    window.open(data.error.action_url, "_blank");
-    return;
-  }
+try{
+const r=await fetch("https://hidden-wind-cca1.eldinalam91.workers.dev/",{method:"POST"});
+const data=await r.json();
 
-  status.textContent = data.error?.message || "حدث خطأ";
+if(r.ok){
+status.textContent="✅ تم إرسال طلب تشغيل السيرفر";
+return;
+}
+
+if(data.error?.code==="ad_required"){
+status.textContent="😁 لا نستفيد من أي إعلان ظهر لك";
+window.open(data.error.action_url,"_blank");
+return;
+}
+
+status.textContent=data.error?.message||"حدث خطأ";
+
+}catch{
+status.textContent="❌ تعذر الاتصال بالخادم";
+}
 };
