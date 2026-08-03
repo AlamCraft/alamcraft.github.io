@@ -81,7 +81,7 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mod-item{height:48px;min-height:48px;max-height:48px;overflow:hidden;}
 .card::-webkit-scrollbar{width:6px}
 .card::-webkit-scrollbar-thumb{background:rgba(212,175,55,.5);border-radius:999px}
-.mc-server{display:flex;direction:ltr!important;align-items:flex-start;gap:10px;width:100%;max-width:1000px;height:96px;padding:8px 10px;position:relative;overflow:hidden;background:#000;border:2px solid #7b7b7b;image-rendering:pixelated;font-family:'Mojangles',sans-serif}
+.mc-server{display:flex;direction:ltr!important;align-items:flex-start;gap:10px;width:100%;max-width:1000px;height:96px;padding:8px 10px;position:relative;overflow:hidden;background:url("images/dirt.png") repeat,#000;background-size:32px 32px;border:2px solid #7b7b7b;image-rendering:pixelated;font-family:'Mojangles',sans-serifmargin-top:30px;margin-bottom:30px;}
 .mc-server::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35);pointer-events:none;z-index:0;}
 .mc-server:hover{border-top:2px solid #9f9f9f;border-left:2px solid #9f9f9f;border-right:2px solid #4a4a4a;border-bottom:2px solid #4a4a4a;}
 .mc-icon{width:64px;height:64px;margin-top:2px;border:1px solid #000;flex-shrink:0;position:relative;z-index:1;}
@@ -90,7 +90,7 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mc-top{display:flex;justify-content:space-between;align-items:flex-start}
 .mc-name{font-size:15px;line-height:1;color:#fff;text-shadow:2px 2px #000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .mc-middle{display:flex;justify-content:space-between;align-items:flex-start;margin-top:2px}
-.mc-motd{display:block;font-size:14px;line-height:16px;white-space:pre-line;color:#fff;text-shadow:2px 2px #000}
+.mc-motd{display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:14px;line-height:16px;white-space:pre-line;color:#fff;text-shadow:2px 2px #000;width:100%;text-align:center}
 .mc-ping{display:flex;align-items:flex-end;gap:2px;height:16px;}
 .mc-ping span{width:5px;background:#55ff55;border:1px solid #000}
 .mc-ping span:nth-child(1){height:4px;}
