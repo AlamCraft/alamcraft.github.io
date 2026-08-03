@@ -324,15 +324,6 @@ window.addEventListener("load", async () => {
     setInterval(updateServerStatus, 1000);
 });
 
-document.getElementById("startServer").onclick = async () => {
-  const status = document.getElementById("status");
-
-  let data={};
-
-try{
-const r=await fetch("https://hidden-wind-cca1.eldinalam91.workers.dev/",{method:"POST"});
-data=await r.json();
-
 document.getElementById("startServer").onclick=async()=>{
 const status=document.getElementById("status");
 
