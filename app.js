@@ -204,16 +204,24 @@ async function updateServerStatus() {
         data.version?.name_clean || data.version?.name || "Offline";
         const bars = document.querySelectorAll(".mc-ping span");
         mcStatus.innerHTML=motd;
-        let level = 5;
+       let level=5;
 
-        if (ping > 300) level = 1;
-        else if (ping > 200) level = 2;
-        else if (ping > 120) level = 3;
-        else if (ping > 60) level = 4;
+if(data.online===false){
+level=0;
+}else if(ping>=1000){
+level=1;
+}else if(ping>=600){
+level=2;
+}else if(ping>=300){
+level=3;
+}else if(ping>=150){
+level=4;
+}
 
-        bars.forEach((bar, i) => {
-            bar.style.opacity = i < level ? 1 : .25;
-        });
+bars.forEach((bar,i)=>{
+bar.style.opacity=i<level?1:.18;
+bar.style.background=data.online?"#55ff55":"#ff5555";
+});
         if (mcOnlinePlayers) {
             mcOnlinePlayers.innerHTML = "";
             const players = data.players?.list || [];
