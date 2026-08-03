@@ -185,7 +185,9 @@ async function updateServerStatus() {
         const mcIcon = document.getElementById("mc-icon");
 
         mcIcon.src=data.icon||"images/logo.webp";
-       const motd=data.motd?.html?.join("<br>")||data.motd?.html||"";
+        const motd=Array.isArray(data.motd?.html)
+        ?data.motd.html.join("<br>")
+        :(data.motd?.html||"");
         const ping = Math.round(performance.now() - start);
         const online = data.players?.online ?? 0;
         const max = data.players?.max ?? 0;
