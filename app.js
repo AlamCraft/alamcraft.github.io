@@ -198,8 +198,10 @@ async function updateServerStatus() {
         }
 
         mcStatus.style.color = "#55ff55";
-        if (mcPlayers) mcPlayers.textContent = `${online}/${max}`;
+        if (mcPlayers) mcPlayers.textContent = `${data.players.online}/${data.players.max}`;
         if (mcPing) mcPing.textContent = `${ping} ms`;
+        document.getElementById("mc-version").textContent =
+        data.version?.name_clean || data.version?.name || "Offline";
         const bars = document.querySelectorAll(".mc-ping span");
         mcStatus.innerHTML=motd;
         let level = 5;
