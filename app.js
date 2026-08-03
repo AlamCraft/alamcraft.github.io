@@ -196,8 +196,6 @@ async function updateServerStatus() {
             setOfflineUI();
             return;
         }
-
-        mcStatus.style.color = "#55ff55";
         if (mcPlayers) mcPlayers.textContent = `${data.players.online}/${data.players.max}`;
         if (mcPing) mcPing.textContent = `${ping} ms`;
         document.getElementById("mc-version").textContent =
