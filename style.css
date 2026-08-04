@@ -87,7 +87,7 @@ img{max-width:100%;display:block}
 .mc-icon img{width:64px;height:64px;display:block;image-rendering:pixelated}
 .mc-info{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;flex:1;padding-left:10px;gap:0}
 .mc-top{display:flex;justify-content:space-between;align-items:flex-start;width:100%;margin:0;padding:0}
-.mc-name{margin:0;padding:0;font-size:18px;line-height:18px}
+.mc-name{margin:0;padding:0;font-size:25px;line-height:25px}
 .mc-right{grid-column:2;grid-row:1/span 3;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;gap:0}
 .mc-ping{display:flex;align-items:flex-end;gap:1px;height:16px}
 .mc-ping span{display:block;width:4px;background:#55ff55;border:1px solid #000}
@@ -96,7 +96,7 @@ img{max-width:100%;display:block}
 .mc-ping span:nth-child(3){height:10px}
 .mc-ping span:nth-child(4){height:13px}
 .mc-ping span:nth-child(5){height:16px}
-.mc-motd{margin-top:-6px;padding:0;font-size:20px;line-height:20px;text-align:left}
+.mc-motd{margin-top:-10px;padding:0;font-size:30px;line-height:20px;text-align:left}
 .mc-motd b,.mc-motd strong{font-family:'MojangBold',sans-serif;font-weight:700}
 #mc-status{display:block;margin:0;padding:0;white-space:pre-line}
 .mc-players{font-family:'Mojangles',sans-serif;font-size:18px;line-height:18px;color:#fff;text-shadow:1px 1px #000;text-align:right}
