@@ -85,8 +85,8 @@ img{max-width:100%;display:block}
 .mc-server:hover{border-top:2px solid #9f9f9f;border-left:2px solid #9f9f9f;border-right:2px solid #4a4a4a;border-bottom:2px solid #4a4a4a}
 .mc-icon{width:64px;height:64px;flex:0 0 64px;margin:4px 0 0 4px}
 .mc-icon img{width:64px;height:64px;display:block;image-rendering:pixelated}
-.mc-info{display:flex;flex-direction:column;flex:1;min-width:0;position:relative}
-.mc-top{display:flex;justify-content:space-between;align-items:flex-start;width:100%}
+.mc-info{display:flex;flex-direction:column;flex:1;min-width:0;justify-content:flex-start}
+.mc-top{display:flex;justify-content:space-between;align-items:flex-start;width:100%;margin-bottom:2px}
 .mc-name{font-family:'MojangBold','Mojangles',sans-serif;font-size:18px;line-height:18px;color:#fff;text-shadow:1px 1px #000;text-align:left}
 .mc-right{display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0}
 .mc-ping{display:flex;align-items:flex-end;gap:1px;height:16px}
@@ -96,9 +96,9 @@ img{max-width:100%;display:block}
 .mc-ping span:nth-child(3){height:10px}
 .mc-ping span:nth-child(4){height:13px}
 .mc-ping span:nth-child(5){height:16px}
-.mc-motd{margin-top:3px;font-family:'Mojangles',sans-serif;font-size:18px;line-height:20px;color:#fff;text-shadow:1px 1px #000;white-space:pre-line}
+.mc-motd{margin:0;padding:0;font-family:'Mojangles',sans-serif;font-size:18px;line-height:18px;color:#fff;text-shadow:1px 1px #000;white-space:pre-line}
 .mc-motd b,.mc-motd strong{font-family:'MojangBold',sans-serif;font-weight:700}
-#mc-status{color:#55ff55;font-weight:normal;text-shadow:1px 1px #000;white-space:pre-line}
+#mc-status{display:block;margin:0;padding:0;white-space:pre-line}
 .mc-players{font-family:'Mojangles',sans-serif;font-size:18px;line-height:18px;color:#fff;text-shadow:1px 1px #000;text-align:right}
 .mc-ping-text{font-family:'Mojangles',sans-serif;font-size:16px;line-height:16px;color:#aaa;text-shadow:1px 1px #000;text-align:right}
 #mc-online-players{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;padding-left:0;align-items:center}
