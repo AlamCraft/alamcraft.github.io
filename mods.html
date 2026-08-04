@@ -67,6 +67,8 @@ const mods=[
 const currentLang=localStorage.getItem("lang")||"ar";
 const container=document.getElementById("mods-container");
 function renderMods(){
+container.innerHTML="";
+mods.forEach(mod=>{
 container.innerHTML+=`
 <div class="mod-card">
 <div class="mod-header">
@@ -90,6 +92,9 @@ const max=document.documentElement.scrollHeight-window.innerHeight;
 progress.style.width=(window.scrollY/max*100)+"%";
 });
 renderMods();
+function toggleLanguage(){
+alert("زر اللغة جاهز، لكن لازم تضيف ترجمة عربية وإنجليزية للأسماء والأوصاف أولًا.");
+}
 </script>
 <style>
 .mods-page{width:100%;display:flex;justify-content:center}
@@ -101,11 +106,11 @@ renderMods();
 .mod-text h3{margin:0 0 6px;color:#55ff55;font-size:1.25rem;font-family:'MojangBold','Mojangles',sans-serif}
 .mod-text p{margin:0;color:#ddd;line-height:1.5}
 .mod-card .minecraft-btn{margin-top:auto}
+.mod-video{width:100%;aspect-ratio:16/9;border:none;border-radius:14px}
 @media(max-width:768px){
 #mods-container{grid-template-columns:1fr}
 .mod-icon{width:56px;height:56px}
 .mod-text h3{font-size:1.1rem}
-.mod-video{width:100%;aspect-ratio:16/9;border:none;border-radius:14px}
 }
 </style>
 <div class="fixed-controls"><button class="control-btn" onclick="toggleLanguage()">🌐</button></div>
