@@ -15,8 +15,8 @@ body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--t
 :lang(ar){font-family:'Arapix',sans-serif!important}
 .container{width:100%;max-width:900px;margin:auto;min-height:100vh}
 .card{background:linear-gradient(180deg,rgba(22,37,59,.95),rgba(10,20,36,.95));border:2px solid rgba(212,175,55,.25);border-radius:22px;padding:24px;margin-bottom:20px;overflow:hidden}
-.logo{width:200px;border-radius:24px}
-.hero{padding:20px 0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.logo{width:200px;border-radius:24px;margin-top:24px}
+.hero{padding:80px 0 20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 .hero h1,.section-title{color:var(--gold)}
 .hero h1,.section-title,.card h2,.staff-card h2{display:flex;justify-content:center;align-items:center;text-align:center;width:100%}
 .hero h1{min-height:auto;height:auto;line-height:1.2;font-size:clamp(1.8rem,6vw,3.5rem);display:flex;align-items:center;justify-content:center;text-align:center}
@@ -84,7 +84,7 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mc-server::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.12);pointer-events:none;z-index:0;}
 .mc-server:hover{border-top:2px solid #9f9f9f;border-left:2px solid #9f9f9f;border-right:2px solid #4a4a4a;border-bottom:2px solid #4a4a4a;}
 .mc-icon{width:64px;height:64px;flex-shrink:0;margin-top:2px;}
-.mc-icon img{width:96px;height:96px;display:block;image-rendering:pixelated;}
+.mc-server{position:relative;display:flex;align-items:flex-start;gap:14px;width:min(760px,95vw);min-height:132px;margin:70px auto 0;padding:12px 14px;background:url('images/dirt.png') repeat;background-size:16px 16px;border:2px solid #000;box-shadow:inset 2px 2px #555,inset -2px -2px #222;color:#fff;overflow:hidden;}
 .mc-top{display:flex;justify-content:space-between;align-items:flex-start;width:100%;margin-bottom:0}
 .mc-name{font-family:'MojangBold','Mojangles',sans-serif;font-size:30px;color:#fff;text-shadow:2px 2px #000;line-height:1;text-align:left;}
 .mc-middle{display:flex;justify-content:space-between;align-items:flex-start;width:100%;margin-top:4px}
