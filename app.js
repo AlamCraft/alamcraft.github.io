@@ -28,48 +28,14 @@ const translations = {
         messenger: "مجموعة الماسينجر",
         discord: "سيرفر الديسكورد",
         adminsTitle: "👑 المشرفين",
-        adminsNames: "❄️👑 علَم جيمر ☘️، الثعلب المفقود 🦊، ملك الجليد",
+        adminsNames: "❄️👑 علَم جيمر ☘️، ثعلوب 🦊، ملك الجليد",
         copyright: "© 2026 AlamCraft Server",
         toastMsg: "✔ تم نسخ  الـ IP السيرفر بنجاح",
         feature1: "✅ يدعم الجافا و البيدروك",
         feature2: "✅ قوانين واضحة و عادلة",
         feature3: "✅ تحديثات مستمرة",
         feature4: "✅ إدارة نشطة",
-        modsTitle: "المودات/الإضافات",
         downloadCenterBtn: "مركز التحميل",
-        modsList: [
-            "مود اصلاح السندان 🔨",
-            "مود نظام المهارات ✨",
-            "مود تسجيل الدخول 🔑",
-            "مود المقايدة 🤝",
-            "مود الخزنات الخاصة 🏦",
-            "مود إدارة الدردشة 💬",
-            "مود تنظيف اللاج 🧹",
-            "مود حمل الموبات في الانفنتوري 👆",
-            "مود ربط شات السيرفر بالديسكورد 💜",
-            "مود الرؤوس 💀",
-            "مود الإضاءة بالأضائة 💡",
-            "مود الشوب 🛒",
-            "مود الأوامر الأساسية ⚙️",
-            "مود النقل للسباون 🛏️",
-            "مود حماية المزارع 🌾",
-            "مود دعم البيدروك 📱🖥️",
-            "مود حماية الأراضي 🚧",
-            "مود الجلوس 🪑",
-            "مود طلب التي بي ✈️",
-            "مود إدارة الصلاحيات 👑",
-            "مود البيع بسعر مخصص 🏛️",
-            "مود تخطي الليل بلاعب واحد 😴",
-            "مود منع استخدام الاكس راي ⛏️",
-            "مود الانتقال لمكان عشوائي 🌍",
-            "مود تجميع الموبات 🌹",
-            "مود تعيين المنزل 🏠",
-            "مود السكينات 👕",
-            "مود ربط الشوب بالسباونرات 🐣",
-            "مود تسهيل قطع الأشجار 🌳",
-            "مود تكسير الموارد بسهوبة ⛏️",
-            "مود دعم جميع الإصدارات 🔄",
-            "مود الدردشة الصوتية 🎤"
         ]
     },
     en: {
@@ -108,41 +74,7 @@ const translations = {
         feature2: "✅ Fair Rules",
         feature3: "✅ Constant Updates",
         feature4: "✅ Active Staff",
-        modsTitle: "Mods/Plugins",
         downloadCenterBtn: "Download Center",
-        modsList: [
-            "AnvilUnlocker 🔨",
-            "AuraSkills ✨",
-            "AuthMe 🔑",
-            "AxTrade 🤝",
-            "AxVaults 🏦",
-            "ChatManager 💬",
-            "ClearLag 🧹",
-            "ClickMobs 👆",
-            "DiscordSRV 💜",
-            "DropHeads 💀",
-            "DynamicLights 💡",
-            "EconomyShopGUI 🛒",
-            "Essentials ⚙️",
-            "EssentialsSpawn 🛏️",
-            "FarmProtection 🌾",
-            "GeyserMC 📱🖥️",
-            "GriefPrevention 🚧",
-            "GSit 🪑",
-            "JustTPA ✈️",
-            "LuckPerms 👑",
-            "NexusAuctionHouse 🏛️",
-            "OnePlayerSleep 😴",
-            "Orebfuscator ⛏️",
-            "RandomTP 🌍",
-            "RoseStacker 🌹",
-            "SetHome 🏠",
-            "SkinsRestorer 👕",
-            "SpawnerShopBridge 🐣",
-            "Timber 🌳",
-            "VeinMiner ⛏️",
-            "ViaVersion 🔄",
-            "Simple Voice Chat 🎤"
         ]
     }
 };
@@ -150,8 +82,6 @@ const translations = {
 let currentLang = localStorage.getItem("lang") || "ar";
 
 const $ = s => document.querySelector(s);
-
-const modsListContainer = $("#mods-list-container");
 const toast = $("#toast");
 const sideMenu = $("#sideMenu");
 const menuOverlay = $("#menuOverlay");
@@ -161,12 +91,10 @@ const mcStatus = $("#mc-status");
 const mcPlayers = $("#mc-players");
 const mcPing = $("#mc-ping");
 const mcOnlinePlayers = $("#mc-online-players");
-
 function toggleMenu() {
     sideMenu?.classList.toggle("active");
     menuOverlay?.classList.toggle("active");
 }
-
 function renderAlamChatBtn() {
     if (!socialLinks) return;
     document.querySelector(".alamchat-btn")?.remove();
@@ -264,17 +192,7 @@ function updateContent() {
             el.textContent = translations[currentLang][key];
         }
     });
-
-    if (modsListContainer) {
-        let html="";
-translations[currentLang].modsList.forEach(mod=>{
-html+=`<li class="mod-item">✨ <span>${mod}</span></li>`;
-});
-modsListContainer.innerHTML=html;
-    }
-
     renderAlamChatBtn();
-
     updateServerStatus();
 }
 function toggleLanguage() {
@@ -282,10 +200,8 @@ function toggleLanguage() {
     localStorage.setItem("lang", currentLang);
     updateContent();
 }
-
 function copyIP() {
     navigator.clipboard.writeText("amc.falix.gg");
-
     if (toast) {
         toast.textContent = translations[currentLang].toastMsg;
         toast.classList.add("show");
