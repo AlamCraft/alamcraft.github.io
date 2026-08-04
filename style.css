@@ -84,7 +84,7 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mc-icon{width:64px;height:64px;flex:0 0 64px;margin:4px 0 0 4px;}
 .mc-server{position:relative;display:flex;align-items:flex-start;gap:10px;width:min(740px,95vw);height:88px;margin:70px auto 0;padding:8px;background:url('images/dirt.png') repeat;background-size:16px 16px;border:2px solid #000;box-shadow:inset 2px 2px #555,inset -2px -2px #222;color:#fff;overflow:hidden;}
 .mc-top{display:flex;justify-content:space-between;align-items:flex-start;width:100%;margin-bottom:0}
-.mc-name{font-family:'MojangBold','Mojangles',sans-serif;font-size:30px;color:#fff;text-shadow:2px 2px #000;line-height:1;text-align:left;}
+.mc-name{font-family:'MojangBold','Mojangles',sans-serif;font-size:18px;color:#fff;text-shadow:1px 1px #000;line-height:1;text-align:left;}
 .mc-middle{display:flex;justify-content:space-between;align-items:flex-start;width:100%;margin-top:4px}
 .mc-motd{display:block;white-space:pre-line;font-size:18px;line-height:20px;color:#fff;text-shadow:2px 2px #000;text-align:left;font-family:'Mojangles',sans-serif}
 .mc-motd span[style*="font-weight:bold"],.mc-motd span[style*="font-weight: bold"]{font-family:'MojangBold',sans-serif!important;font-weight:normal!important}
