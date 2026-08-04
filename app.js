@@ -196,8 +196,6 @@ async function updateServerStatus() {
         }
         if (mcPlayers) mcPlayers.textContent = `${data.players.online}/${data.players.max}`;
         if (mcPing) mcPing.textContent = `${ping} ms`;
-        document.getElementById("mc-version").textContent=
-        data.online?(data.version?.name_clean||data.version?.name||""):"";
         const bars = document.querySelectorAll(".mc-ping span");
         mcStatus.innerHTML=motd;
        let level=5;
