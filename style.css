@@ -12,7 +12,7 @@ html[lang='en'] body{font-size:.88rem}
 body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--text);font-family:var(--main-font);margin:0;padding:20px;min-height:100vh;overflow-x:hidden}
 :lang(en){font-family:'Mojangles',sans-serif!important}
 :lang(ar){font-family:'Arapix',sans-serif!important}
-.container{width:100%;max-width:900px;margin:auto;min-height:100vh}
+.container{width:min(900px,calc(100vw - 40px));margin:0 auto;min-height:100vh}
 .card{background:linear-gradient(180deg,rgba(22,37,59,.95),rgba(10,20,36,.95));border:2px solid rgba(212,175,55,.25);border-radius:22px;padding:24px;margin-bottom:20px;overflow:hidden}
 .logo{width:200px;border-radius:24px;margin-top:24px}
 .hero{padding:80px 0 20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
@@ -81,7 +81,7 @@ img{max-width:100%;display:block}
 #scroll-progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--gold);z-index:99999}
 @media(max-width:768px){.content-grid{grid-template-columns:1fr}.logo{width:110px}.control-btn{width:52px;height:52px;min-width:52px;min-height:52px}.hero{min-height:360px}.card{padding:18px}.status-card{height:220px}.connection{height:350px;min-height:350px;max-height:350px}.social-card{height:420px}}
 @media(max-width:480px){.hero h1{font-size:2rem}}
-.mc-server{position:relative;display:flex;align-items:flex-start;gap:10px;width:min(900px,95vw);height:88px;padding:8px;background:url('images/dirt.png') repeat;background-size:24px 24px;border:2px solid #000;box-shadow:inset 2px 2px #555,inset -2px -2px #222;color:#fff;overflow:hidden;margin:70px auto 0}.mc-server:hover{border-top:2px solid #9f9f9f;border-left:2px solid #9f9f9f;border-right:2px solid #4a4a4a;border-bottom:2px solid #4a4a4a}
+.mc-server{position:relative;display:flex;align-items:flex-start;gap:10px;width:100%;height:88px;padding:8px;background:url('images/dirt.png') repeat;background-size:24px 24px;border:2px solid #000;box-shadow:inset 2px 2px #555,inset -2px -2px #222;color:#fff;overflow:hidden;margin:70px auto 0}
 .mc-icon{width:64px;height:64px;flex:0 0 64px;margin:4px 0 0 4px}
 .mc-icon img{width:64px;height:64px;display:block;image-rendering:pixelated}
 .mc-info{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-start;padding-top:2px}
