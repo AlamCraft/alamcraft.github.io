@@ -20,7 +20,7 @@ body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--t
 .section-title{display:flex;justify-content:center;align-items:center;text-align:center;width:100%;height:50px;color:var(--gold)}
 .ip-text{display:block;width:100%;direction:ltr;text-align:center;color:#55ff55;font-weight:bold;word-break:break-word;font-family:'Mojangles',sans-serif}
 .btn-copy,.btn-bedrock,.minecraft-btn{width:100%;height:52px;padding:14px;border:none;border-radius:18px;background:linear-gradient(180deg,#7CFC00,#4CAF50);color:#102236;font-family:'Mojangles',sans-serif;font-weight:bold;display:flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none}
-#startServer{width:620px;max-width:100%;height:52px;padding:14px;border:none;border-radius:18px;background:linear-gradient(180deg,#7CFC00,#4CAF50);color:#102236;font-family:'Mojangles',sans-serif;font-weight:bold;display:flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none;margin:4px auto 0;transition:.15s}
+#startServer{width:100%;max-width:260px;height:52px;padding:14px;border:none;border-radius:18px;background:linear-gradient(180deg,#7CFC00,#4CAF50);color:#102236;font-family:'Mojangles',sans-serif;font-weight:bold;display:flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none;margin:8px auto 0;transition:.15s}
 #startServer:hover{filter:brightness(1.08)}
 #startServer:active{transform:translateY(2px);filter:brightness(.92)}
 #startServer:disabled{opacity:.65;cursor:not-allowed}
@@ -65,7 +65,7 @@ img{max-width:100%;display:block}
 .rules-card{padding:20px;min-height:auto;height:auto;max-height:none}
 .side-column{display:flex;flex-direction:column;gap:20px}
 .mods-card{padding:20px;min-height:auto;height:auto;max-height:none}
-.minecraft-btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin-top:4px}
+.minecraft-btn{display:flex;align-items:center;justify-content:center;width:calc(100% - 24px);max-width:calc(100% - 24px);height:52px;margin:12px auto 0;padding:14px;border:none;border-radius:18px;background:linear-gradient(180deg,#7CFC00,#4CAF50);color:#102236;font-family:'Mojangles',sans-serif;font-weight:bold;text-decoration:none;box-sizing:border-box}
 .online-players{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:15px}
 .player-card{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);padding:6px 10px;border-radius:10px}
 .player-head{width:24px;height:24px;border-radius:4px;image-rendering:pixelated}
