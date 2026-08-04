@@ -93,6 +93,7 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mc-name{font-size:28px;line-height:1;color:#fff;text-shadow:2px 2px #000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .mc-middle{display:flex;justify-content:space-between;align-items:flex-start;margin-top:2px}
 .mc-motd{display:block;white-space:pre-line;font-size:22px;line-height:18px;color:#fff;text-shadow:2px 2px #000;text-align:left;font-family:'Mojangles',sans-serif}
+.mc-motd b,.mc-motd strong{font-family:'MojangBold',sans-serif;font-weight:700}
 .mc-ping{display:flex;align-items:flex-end;gap:2px;height:16px;}
 .mc-ping span{width:5px;background:#55ff55;border:1px solid #000}
 .mc-ping span:nth-child(1){height:4px;}
