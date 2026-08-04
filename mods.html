@@ -62,10 +62,17 @@ const mods=[
 {nameAr:"مود دعم جميع الإصدارات 🔄",nameEn:"ViaVersion",icon:"images/mods/viaversion.webp",descAr:"يسمح بدخول جميع الإصدارات.",descEn:"Supports multiple Minecraft versions.",video:"https://youtu.be/LzW4SH7ceEs"},
 {nameAr:"مود الدردشة الصوتية 🎤",nameEn:"Simple Voice Chat",icon:"images/mods/voicechat.webp",descAr:"يضيف دردشة صوتية داخل اللعبة.",descEn:"Adds in-game voice chat.",video:"https://youtu.be/8bQXMl2bgrw"}
 ];
-const currentLang=localStorage.getItem("lang")||"ar";
+let currentLang=localStorage.getItem("lang")||"ar";
 const container=document.getElementById("mods-container");
 function renderMods(){
 container.innerHTML="";
+document.documentElement.lang=currentLang;
+document.documentElement.dir=currentLang==="ar"?"rtl":"ltr";
+document.title=currentLang==="ar"?"مودات سيرفر علم كرافت":"AlamCraft Server Mods";
+document.querySelector("h1").textContent=currentLang==="ar"?"⚙️ مودات سيرفر علم كرافت":"⚙️ AlamCraft Server Mods";
+document.querySelector(".hero p").textContent=currentLang==="ar"?"جميع مودات وإضافات السيرفر مع شرح لكل مود.":"All server plugins with a short description and tutorial video.";
+document.querySelector("#sideMenu a:nth-child(1)").textContent=currentLang==="ar"?"🏠 الصفحة الرئيسية":"🏠 Home";
+document.querySelector("#sideMenu a:nth-child(2)").textContent=currentLang==="ar"?"⚙️ المودات":"⚙️ Mods";
 mods.forEach(mod=>{
 container.innerHTML+=`
 <div class="mod-card">
@@ -89,9 +96,12 @@ const progress=document.getElementById("scroll-progress");
 const max=document.documentElement.scrollHeight-window.innerHeight;
 progress.style.width=(window.scrollY/max*100)+"%";
 });
+currentLang=localStorage.getItem("lang")||"ar";
 renderMods();
 function toggleLanguage(){
-alert("زر اللغة جاهز، لكن لازم تضيف ترجمة عربية وإنجليزية للأسماء والأوصاف أولًا.");
+const lang=localStorage.getItem("lang")==="ar"?"en":"ar";
+localStorage.setItem("lang",lang);
+location.reload();
 }
 </script>
 <style>
