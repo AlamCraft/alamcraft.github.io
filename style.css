@@ -1,5 +1,7 @@
 @font-face{font-family:'Mojangles';src:url('fonts/Mojangles.ttf') format('truetype')}
 @font-face{font-family:'Arapix';src:url('fonts/MojanglesArab.ttf') format('truetype')}
+@font-face{font-family:'MojangBold';src:url('fonts/Mojang-Bold.ttf') format('truetype');font-weight:700;font-style:normal}
+.mc-bold{font-family:'MojangBold',sans-serif;font-weight:700}
 :root{--bg:#041321;--card:rgba(17,32,53,.92);--text:#ffffff;--text-muted:#c8d29b;--primary:#4caf50;--accent:#1b5e20;--gold:#55ff55;--main-font:'Mojangles',sans-serif}
 html{scroll-behavior:smooth;font-size:16px;text-size-adjust:100%;-webkit-text-size-adjust:100%;overflow-x:hidden}
 html[lang='en']{--main-font:'Mojangles',sans-serif}
