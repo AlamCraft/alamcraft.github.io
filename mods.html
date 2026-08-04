@@ -67,8 +67,6 @@ const mods=[
 const currentLang=localStorage.getItem("lang")||"ar";
 const container=document.getElementById("mods-container");
 function renderMods(){
-container.innerHTML="";
-mods.forEach(mod=>{
 container.innerHTML+=`
 <div class="mod-card">
 <div class="mod-header">
@@ -78,7 +76,7 @@ container.innerHTML+=`
 <p>${currentLang==="ar"?mod.descAr:mod.descEn}</p>
 </div>
 </div>
-<a href="${mod.video}" target="_blank" class="minecraft-btn">🎥 ${currentLang==="ar"?"مشاهدة الشرح":"Watch Tutorial"}</a>
+<iframe class="mod-video" src="https://www.youtube.com/embed/${mod.video}" title="${mod.nameEn}" loading="lazy" allowfullscreen></iframe>
 </div>`;
 });
 }
@@ -107,7 +105,9 @@ renderMods();
 #mods-container{grid-template-columns:1fr}
 .mod-icon{width:56px;height:56px}
 .mod-text h3{font-size:1.1rem}
+.mod-video{width:100%;aspect-ratio:16/9;border:none;border-radius:14px}
 }
 </style>
+<div class="fixed-controls"><button class="control-btn" onclick="toggleLanguage()">🌐</button></div>
 </body>
 </html>
