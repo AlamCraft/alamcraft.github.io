@@ -217,16 +217,8 @@ bar.style.opacity=i<level?1:.18;
 bar.style.background=data.online?"#55ff55":"#ff5555";
 });
         if (mcOnlinePlayers) {
-            mcOnlinePlayers.innerHTML = "";
-            const players = data.players?.list || [];
-
-            players.forEach(player => {
-               mcOnlinePlayers.insertAdjacentHTML("beforeend",`
-<div class="mc-player">
-<img src="${getHead(player.name_clean)}">
-<span>${player.name_clean}</span>
-</div>`);
-            });
+            const players=data.players?.list||[];
+mcOnlinePlayers.innerHTML=players.map(player=>`<div class="mc-player"><img src="${getHead(player.name_clean)}"><span>${player.name_clean}</span></div>`).join("");
         }
 
     } catch (e) {
@@ -274,10 +266,11 @@ function updateContent() {
     });
 
     if (modsListContainer) {
-        modsListContainer.innerHTML = "";
-        translations[currentLang].modsList.forEach(mod => {
-            modsListContainer.innerHTML += `<li class="mod-item">✨ <span>${mod}</span></li>`;
-        });
+        let html="";
+translations[currentLang].modsList.forEach(mod=>{
+html+=`<li class="mod-item">✨ <span>${mod}</span></li>`;
+});
+modsListContainer.innerHTML=html;
     }
 
     renderAlamChatBtn();
@@ -311,7 +304,7 @@ window.addEventListener("scroll", () => {
 window.addEventListener("load", async () => {
     await loadSkins();
     updateContent();
-    setInterval(updateServerStatus, 1000);
+    setInterval(updateServerStatus, 5000);
 });
 
 document.getElementById("startServer").onclick=async()=>{
