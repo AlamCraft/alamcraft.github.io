@@ -46,8 +46,7 @@ body{background:radial-gradient(circle at top,#0f2844,#041321 70%);color:var(--t
 #toast.show{top:20px;opacity:1}
 .status-card{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 .connection{min-height:520px;height:520px;max-height:520px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:28px 24px}
-.ip-wrapper{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;max-width:620px;padding:28px 24px}
-.social-card{height:470px;min-height:470px;max-height:470px;overflow:auto}
+.ip-wrapper{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;max-width:900px;padding:28px 24px}.social-card{height:470px;min-height:470px;max-height:470px;overflow:auto}
 .staff-card{height:120px;min-height:120px;max-height:120px;overflow:auto}
 .version-badges{display:flex;flex-direction:column;gap:0;width:100%}
 .badge{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;width:100%;height:72px;min-height:72px;max-height:72px;padding:16px;font-size:1.15rem;font-family:'Mojangles',sans-serif;overflow:hidden}
@@ -69,7 +68,7 @@ img{max-width:100%;display:block}
 .player-card{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);padding:6px 10px;border-radius:10px}
 .player-head{width:24px;height:24px;border-radius:4px;image-rendering:pixelated}
 .pulse{display:flex;flex-direction:column;gap:8px;justify-content:center}
-.footer p{height:64px;display:flex;align-items:center;justify-content:center;background:#5f4330;color:#fff7d1;border-radius:18px;padding:0 20px}
+.footer p{min-height:64px;height:auto;display:flex;align-items:center;justify-content:center;background:#5f4330;color:#fff7d1;border-radius:18px;padding:18px 20px;text-align:center}
 .card::-webkit-scrollbar{width:6px}
 .card::-webkit-scrollbar-thumb{background:rgba(212,175,55,.5);border-radius:999px}
 .status-header{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:12px}
@@ -79,8 +78,6 @@ img{max-width:100%;display:block}
 .player-count{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;text-align:center}
 .loaded{visibility:visible;opacity:1;transition:.3s}
 #scroll-progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--gold);z-index:99999}
-@media(max-width:768px){.content-grid{grid-template-columns:1fr}.logo{width:110px}.control-btn{width:52px;height:52px;min-width:52px;min-height:52px}.hero{min-height:360px}.card{padding:18px}.status-card{height:220px}.connection{height:350px;min-height:350px;max-height:350px}.social-card{height:420px}}
-@media(max-width:480px){.hero h1{font-size:2rem}}
 .mc-server{position:relative;display:flex;align-items:flex-start;gap:10px;width:100%;max-width:900px;height:88px;padding:8px;margin:70px auto 0;background:url("images/dirt.png") repeat;background-size:60px 60px;border:2px solid #000;box-shadow:inset 2px 2px #555,inset -2px -2px #222;color:#fff;overflow:hidden}
 .mc-server::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35);pointer-events:none;z-index:0}
 .mc-icon{position:relative;z-index:1;width:64px;height:64px;flex:0 0 64px;margin:4px 0 0 4px}
