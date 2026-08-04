@@ -36,7 +36,6 @@ const translations = {
         feature3: "✅ تحديثات مستمرة",
         feature4: "✅ إدارة نشطة",
         downloadCenterBtn: "مركز التحميل",
-        ]
     },
     en: {
         title: "AlamCraft Server",
@@ -75,7 +74,6 @@ const translations = {
         feature3: "✅ Constant Updates",
         feature4: "✅ Active Staff",
         downloadCenterBtn: "Download Center",
-        ]
     }
 };
 
