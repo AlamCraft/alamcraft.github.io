@@ -80,13 +80,13 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mod-item{height:48px;min-height:48px;max-height:48px;overflow:hidden;}
 .card::-webkit-scrollbar{width:6px}
 .card::-webkit-scrollbar-thumb{background:rgba(212,175,55,.5);border-radius:999px}
-.mc-server{display:flex;direction:ltr!important;align-items:stretch;gap:10px;width:100%;max-width:900px;min-height:132px;padding:10px;position:relative;overflow:visible;background:url("images/dirt.png") repeat,#000;background-size:32px 32px;border:2px solid #7b7b7b;image-rendering:pixelated;font-family:'Mojangles',sans-serif;margin-top:30px;margin-bottom:30px;}
+.mc-server{position:relative;display:flex;align-items:flex-start;gap:14px;width:min(760px,95vw);min-height:132px;margin:70px auto 0;padding:12px 14px;background:url('images/dirt.png') repeat;border:2px solid #000;box-shadow:inset 2px 2px #555,inset -2px -2px #222,0 4px 0 #000;color:#fff;overflow:hidden;}
 .mc-server::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.12);pointer-events:none;z-index:0;}
 .mc-server:hover{border-top:2px solid #9f9f9f;border-left:2px solid #9f9f9f;border-right:2px solid #4a4a4a;border-bottom:2px solid #4a4a4a;}
-.mc-icon{width:96px;height:96px;margin-top:2px;border:1px solid #000;flex-shrink:0;position:relative;z-index:1;}
+.mc-icon{width:64px;height:64px;flex-shrink:0;margin-top:2px;}
 .mc-icon img{width:96px;height:96px;display:block;image-rendering:pixelated;}
 .mc-top{display:flex;justify-content:space-between;align-items:flex-start;width:100%;margin-bottom:0}
-.mc-name{font-size:30px;line-height:1;color:#fff;text-shadow:2px 2px #000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mc-name{font-family:'MojangBold','Mojangles',sans-serif;font-size:30px;color:#fff;text-shadow:2px 2px #000;line-height:1;text-align:left;}
 .mc-middle{display:block;width:100%;margin-top:0}
 .mc-motd{display:block;white-space:pre-line;font-size:18px;line-height:20px;color:#fff;text-shadow:2px 2px #000;text-align:left;font-family:'Mojangles',sans-serif}
 .mc-motd span[style*="font-weight:bold"],.mc-motd span[style*="font-weight: bold"]{font-family:'MojangBold',sans-serif!important;font-weight:normal!important}
@@ -102,8 +102,8 @@ html[lang='ar'],html[lang='en']{font-size:16px}
 .mc-bottom{display:flex;flex-direction:column;align-items:flex-end;gap:0;margin-top:2px;width:100%}
 #mc-online-players{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;padding-left:106px;justify-content:flex-start;align-items:flex-start;width:100%}
 .mc-player img{width:16px;height:16px;image-rendering:pixelated;flex-shrink:0}
-.mc-ping-text{font-size:22px;color:#55ff55;text-shadow:2px 2px #000;}
-.mc-players{font-size:26px;color:#ffffff;text-shadow:2px 2px #000;}
+.mc-ping-text{font-family:'Mojangles',sans-serif;font-size:16px;color:#aaa;text-shadow:2px 2px #000;line-height:1.1;text-align:right;}
+.mc-players{font-family:'Mojangles',sans-serif;font-size:18px;color:#fff;text-shadow:2px 2px #000;line-height:1;text-align:right;}
 .mc-player{display:flex;align-items:center;gap:4px;padding:0;background:none;border:none;border-radius:0;white-space:nowrap;color:#fff;text-shadow:2px 2px #000}
 #startServer{width:100%;padding:14px;border:none;border-radius:18px;background:linear-gradient(180deg,#7CFC00,#4CAF50);color:#102236;font-family:'Mojangles',sans-serif;font-weight:bold;display:flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none;height:52px;min-height:52px;margin-top:4px;transition:.15s}
 #startServer:hover{filter:brightness(1.08)}
